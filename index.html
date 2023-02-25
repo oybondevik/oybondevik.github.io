@@ -4,67 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- LENKJER -->
-    <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap" rel="stylesheet">
+    <title>Exphil ordteljar</title>
+
+    <script>
+        var output = 0;
     
-    <!-- BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <title>Øystein Skjerdal Bondevik</title>
+        function readTextFile(file){
+            var fr = new FileReader();
+            fr.onload = (evt) => {
+                console.log(evt.target.result);
+            };
+            fr.readAsText(file)
+            return fr.content;
+        }
+    
+        function countWords() {
+            str = readTextFile("tekst.txt");
+            output = str.trim().split(/\s+/).length;
+            document.getElementById("output_text").innerHTML = output;
+            document.getElementById("h2").style.color  = "blue";
+        }
+    
+    
+    </script>
 </head>
+<body onload="countWords()">
+    <h1>Korleis går det med Øystein sin exphiltekst?</h1>
+    <h2 id = "h2">Ordteljar</h2>
+    <p>Ord: <span id = "output_text"></span></p>
 
-<body style="background-color: #fefffe;">
-    <div class="header">
-        <div class="navigation">
-            <ul>
-                <a href="#utdanning"><li>Utdanning</li></a>
-                <a href="#erfaringar"><li>Erfaringar</li></a>
-                <a href="#ferdigheiter"><li>Ferdigheiter</li></a>
-                <a href="#prosjekt"><li>Prosjekt</li></a>
-            </ul>
-        </div>
-    </div>
+    <button onclick="countWords()">Trykk</button>
 
-    <div class="container-fluid">
-        <div class="row" id="framside">
-            <div class="col-4">
-                <div><h1>ØYSTEIN</h1></div>
-                <div id="h1_1"><h1>SKJERDAL</h1></div>
-                <div id="h1_2"><h1>BONDEVIK</h1></div>
-            </div>
-            <div class="col-4" id="h1_shadow">
-                <div><h1>ØYSTEIN</h1></div>
-                <div id="h1_1"><h1>SKJERDAL</h1></div>
-                <div id="h1_2"><h1>BONDEVIK</h1></div>
-            </div>
-            <div class="col-4">
-                <img src="media/meg2.jpeg" class="std_bilde" id="cv_bilde">
-            </div>
-            <div class="col-3" style="color: darkgray;">
-                <div><h1>ØYSTEIN</h1></div>
-                <div id="h1_1"><h1>SKJERDAL</h1></div>
-                <div id="h1_2"><h1>BONDEVIK</h1></div>
-            </div>
-            <div class="col-3" id="h1_shadow" style="color: lightgray;">
-                <div><h1>ØYSTEIN</h1></div>
-                <div id="h1_1"><h1>SKJERDAL</h1></div>
-                <div id="h1_2"><h1>BONDEVIK</h1></div>
-            </div>
-        </div>
-        <div class="row" id="utdanning">
 
-        </div>
-        <div class="row bg-dark" id="erfaringar">
-            <div class="col-4">
-                <img src="media/forskerfabrikken.jpeg" class="std_bilde">
-            </div>
-        </div>
-    </div>
-   
 
 </body>
 </html>
