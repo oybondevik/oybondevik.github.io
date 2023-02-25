@@ -12,8 +12,8 @@
             var ord = 68;
 
             document.getElementById("output_tekst").innerHTML = ord;
-            document.getElementById("progress").style.width = ord/1000;
-            document.getElementById("progress").innerHTML = "" + ord/1000*100 + "%";
+            document.getElementById("progress").style.width = (ord/10).toString() + '%';
+            document.getElementById("progress").innerHTML = "" + ord/10 + "%";
         }
         
 
