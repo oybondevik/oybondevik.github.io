@@ -9,11 +9,15 @@
 
     <script>
         function myFunction(){
-            var ord = 170;
+            var ord = 188;
 
             document.getElementById("output_tekst").innerHTML = ord;
             document.getElementById("progress").style.width = (ord/10).toString() + '%';
             document.getElementById("progress").innerHTML = "" + ord/10 + "%";
+
+            document.getElementById("output_tekst_2").innerHTML = ord/10;
+            document.getElementById("progress_2").style.width = (ord/100).toString() + '%';
+            document.getElementById("progress_2").innerHTML = "" + ord/100 + "%";
         }
         
 
@@ -45,6 +49,12 @@
     
         <div class="progress">
             <div class="progress-bar"  id = "progress"></div>
+        </div>
+
+        <h2 id = "h2">Gode ord skrivne: <span id = "output_tekst_2"></span></h2>
+    
+        <div class="progress">
+            <div class="progress-bar bg-danger"  id = "progress_2"></div>
         </div>
 
         <h2>Nettsider laga: 1</h2>
