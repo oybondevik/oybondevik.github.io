@@ -9,15 +9,15 @@
 
     <script>
         function myFunction(){
-            var ord = 1233;
+            var ord = 1313;
 
             document.getElementById("output_tekst").innerHTML = ord;
             document.getElementById("progress").style.width = (ord/10).toString() + '%';
             document.getElementById("progress").innerHTML = "" + ord/10 + "%";
 
-            document.getElementById("output_tekst_2").innerHTML = (ord/5+300).toFixed(0);
-            document.getElementById("progress_2").style.width = (ord/50+30).toString() + '%';
-            document.getElementById("progress_2").innerHTML = "" + (ord/50+30).toFixed(1) + "%";
+            document.getElementById("output_tekst_2").innerHTML = (ord/5+500).toFixed(0);
+            document.getElementById("progress_2").style.width = ((ord/5+500)/ord*100).toString() + '%';
+            document.getElementById("progress_2").innerHTML = "" + ((ord/5+500)/ord*100).toFixed(1) + "%";
         }
         
 
@@ -53,7 +53,7 @@
         <h2 id = "h2">Ord skrivne: <span id = "output_tekst"></span></h2>
     
         <div class="progress">
-            <div class="progress-bar bg-info"  id = "progress"></div>
+            <div class="progress-bar bg-success"  id = "progress"></div>
         </div>
 
         <br><br>
@@ -74,11 +74,11 @@
 
         <br><br>
 
-        <h1>Status:  <span class="badge bg-primary">Sluttspurtande</span></h1>
+        <h1>Status:  <span class="badge bg-success">Ferdig!</span></h1>
 
         <br><br>
 
-        <h2>Humør:  <span class="badge bg-success">Godt</span></h2>
+        <h2>Humør:  <span class="badge bg-danger">Ferdig</span></h2>
     
     </div>
    
